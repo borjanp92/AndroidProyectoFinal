@@ -77,6 +77,12 @@
         <item>panini</item>
         <item>pizza</item>
     </string-array>
+    <string-array name="codProductosPostres">
+        <item>NAT</item>
+        <item>YOGU</item>
+        <item>FRUT</item>
+        <item>DULC</item>
+    </string-array>
 
     <string-array name="postresDescripcion">
         <item>Natillas</item>
