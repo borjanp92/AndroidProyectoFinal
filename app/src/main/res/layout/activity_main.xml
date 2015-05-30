@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#A9F5F2">
+
+    <TextView
+        android:text="@string/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#0000FF"
+        android:id="@+id/textView"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/textView"
+        android:id="@+id/btMesa1"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/mesa11"
+        android:onClick="onClick"/>
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/btMesa2"
+        android:layout_alignBottom="@+id/btMesa1"
+        android:layout_marginRight="40dp"
+        android:onClick="onClick"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/mesa2" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/btMesa3"
+        android:layout_below="@+id/btMesa1"
+        android:layout_alignStart="@+id/btMesa1"
+        android:layout_marginTop="50dp"
+        android:onClick="onClick"
+        android:background="@drawable/mesa3" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/btMesa4"
+        android:layout_alignTop="@+id/btMesa3"
+        android:layout_alignStart="@+id/btMesa2"
+        android:onClick="onClick"
+        android:background="@drawable/mesa4" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/btMesa5"
+        android:layout_below="@+id/btMesa3"
+        android:layout_alignStart="@+id/btMesa3"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/mesa5"
+        android:onClick="onClick"/>
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/btMesa6"
+        android:layout_alignTop="@+id/btMesa5"
+        android:layout_alignStart="@+id/btMesa4"
+        android:background="@drawable/mesa6"
+        android:onClick="onClick"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salir"
+        android:id="@+id/btSalir"
+        android:layout_below="@+id/btMesa5"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="#A9F5F2"
+        android:textColor="#0000FF"
+        android:onClick="clickSalir"/>
+</RelativeLayout>

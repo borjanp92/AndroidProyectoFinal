@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#A9F5F2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Seleccione la bebida"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="57dp"
+        android:textColor="#0000FF"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Seleccione la comida"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="100dp"
+        android:textColor="#0000FF"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Seleccione el postre"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="100dp"
+        android:textColor="#0000FF"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:id="@+id/btVolver"
+        android:layout_marginBottom="55dp"
+        android:onClick="clicVolver"
+        android:textColor="#0000FF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Pedido"
+        android:id="@+id/btVerPedido"
+        android:layout_alignTop="@+id/btVolver"
+        android:layout_toEndOf="@+id/textView2"
+        android:onClick="clickVerPedido"
+        android:textColor="#0000FF"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bebidas"
+        android:id="@+id/btSeleccionarBebida"
+        android:onClick="clickSeleccionarBebida"
+        android:textColor="#0000FF"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toEndOf="@+id/btVerPedido" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comida"
+        android:id="@+id/btSeleccionarComida"
+        android:onClick="clickSeleccionarComida"
+        android:textColor="#0000FF"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/btVerPedido" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Postre"
+        android:id="@+id/btSeleccionarPostre"
+        android:onClick="clickSeleccionarPostre"
+        android:textColor="#0000FF"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toEndOf="@+id/btVerPedido" />
+
+</RelativeLayout>

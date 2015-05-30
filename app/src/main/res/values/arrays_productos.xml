@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="codProductoBebidas">
+        <item>COCLA</item>
+        <item>CERV</item>
+        <item>FANTNA</item>
+        <item>FANTLI</item>
+        <item>NEST</item>
+        <item>AQUA</item>
+        <item>AGUA</item>
+    </string-array>
+    <string-array name="bebidasDescripcion">
+        <item>Coca cola</item>
+        <item>Cerveza</item>
+        <item>Fanta de naranja</item>
+        <item>Fanta de limon</item>
+        <item>Coca cola ligth</item>
+        <item>Nestea</item>
+        <item>Aquarius</item>
+        <item>Agua</item>
+    </string-array>
+    <string-array name="bebidasPrecio">
+        <item>1.50</item>
+        <item>1.00</item>
+        <item>1.50</item>
+        <item>1.50</item>
+        <item>1.60</item>
+        <item>1.75</item>
+        <item>1.60</item>
+        <item>0.50</item>
+    </string-array>
+    <string-array name="bebidasNombreFoto">
+        <item>coca_cola</item>
+        <item>cerveza</item>
+        <item>fanta_naranja</item>
+        <item>fanta_limon</item>
+        <item>coca_cola_ligth</item>
+        <item>nestea</item>
+        <item>aquarius</item>
+        <item>agua</item>
+    </string-array>
+
+    <string-array name="comidasDescripcion">
+        <item>Perrito caliente</item>
+        <item>Patatas fritas</item>
+        <item>Patatas deluxe</item>
+        <item>Hamburguesa</item>
+        <item>Baguette</item>
+        <item>Panini</item>
+        <item>Pizza</item>
+    </string-array>
+    <string-array name="comidasPrecio">
+        <item>1.20</item>
+        <item>1.00</item>
+        <item>1.20</item>
+        <item>2.20</item>
+        <item>3.00</item>
+        <item>2.20</item>
+        <item>4.00</item>
+    </string-array>
+    <string-array name="comidasNombreFoto">
+        <item>perrito_caliente</item>
+        <item>patatas_fritas</item>
+        <item>patatas_deluxe</item>
+        <item>hamburguesa</item>
+        <item>baguette</item>
+        <item>panini</item>
+        <item>pizza</item>
+    </string-array>
+
+    <string-array name="postresDescripcion">
+        <item>Natillas</item>
+        <item>Yogures</item>
+        <item>Helados</item>
+        <item>Frutas</item>
+        <item>Dulces</item>
+    </string-array>
+    <string-array name="postresPrecio">
+        <item>1.00</item>
+        <item>1.00</item>
+        <item>1.50</item>
+        <item>0.50</item>
+        <item>1.00</item>
+    </string-array>
+    <string-array name="postresNombreFoto">
+        <item>natilla</item>
+        <item>yogur</item>
+        <item>helado</item>
+        <item>fruta</item>
+        <item>dulce</item>
+    </string-array>
+</resources>

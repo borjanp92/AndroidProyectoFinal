@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BocateriaCastelar02</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="titulo">Seleccione una mesa</string>
+    <string name="informacion">informacion</string>
+    <string name="salir">salir</string>
+    <string name="descripcion">Descripcion :</string>
+    <string name="precio">Precio :</string>
+    <string name="SalirAplicacion">Salir</string>
+    <string name="confirmacionEliminacionProducto">¿Desea eliminar este producto del pedido?</string>
+    <string name="TituloMensajeDialog">Pedidos</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="totalPedido">El total del pedido es :</string>
+    <string name="dineroIntroducido">Se ha pagado con :</string>
+
+</resources>
