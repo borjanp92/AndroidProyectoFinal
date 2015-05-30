@@ -23,10 +23,6 @@ import dao.SingletonMesa;
 
 import android.content.DialogInterface.OnClickListener;
 
-
-/**
- * Created by RAMON on 24/01/2015.
- */
 public class ActivityListadoPedidos extends Activity {
     private ListView listViewPedido;
     private TextView tvTotal;

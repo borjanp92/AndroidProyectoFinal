@@ -40,6 +40,16 @@
         <item>agua</item>
     </string-array>
 
+    <string-array name="codProductoComida">
+        <item>PERCA</item>
+        <item>PATAFRI</item>
+        <item>PATADEL</item>
+        <item>HAMB</item>
+        <item>BAGUET</item>
+        <item>PANI</item>
+        <item>PIZZ</item>
+    </string-array>
+
     <string-array name="comidasDescripcion">
         <item>Perrito caliente</item>
         <item>Patatas fritas</item>
