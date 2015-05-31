@@ -70,7 +70,7 @@ public class ActivityBebidas extends Activity {
         productos=new ArrayList<Producto>();
 
         for(int i=0;i<nombres.length;i++){
-            productos.add(new Producto(i,codsArticulos[i],nombres[i],Double.valueOf(precios[i]), fotos[i]));
+            productos.add(new Producto(i,codsArticulos[i],nombres[i],Double.parseDouble(precios[i]), fotos[i]));
 
         }
         return productos;
