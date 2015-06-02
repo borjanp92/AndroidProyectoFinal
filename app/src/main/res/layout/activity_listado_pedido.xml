@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Pedido"
+        android:text="@string/pedido"
         android:id="@+id/textView4"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -17,7 +17,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pagar"
+        android:text="@string/pagar"
         android:id="@+id/btPagar"
         android:layout_marginBottom="40dp"
         android:onClick="clickPagar"
@@ -32,7 +32,8 @@
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:layout_above="@+id/btPagar" />
+        android:layout_above="@+id/btPagar"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,6 +43,7 @@
         android:layout_alignBottom="@+id/btPagar"
         android:layout_toStartOf="@+id/textView4"
         android:textColor="#0000FF"/>
+
 
 
 </RelativeLayout>

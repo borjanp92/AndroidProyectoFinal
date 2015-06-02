@@ -59,9 +59,9 @@ public class MainActivity extends ActionBarActivity {
         startActivity(new Intent(this,ActivityPedido.class));
     }
 
-    public void clickSalir(View view){
+    /*public void clickSalir(View view){
         finish();
-    }
+    }*/
 
 
     @Override

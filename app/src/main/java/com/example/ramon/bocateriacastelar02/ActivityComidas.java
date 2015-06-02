@@ -9,18 +9,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import dao.SingletonMesa;
 import dto.Producto;
 
+/**
+ * Created by RAMON on 19/01/2015.
+ */
 public class ActivityComidas extends Activity {
 
     final static String COD_ENVIO="NEWPROD";
@@ -32,12 +37,10 @@ public class ActivityComidas extends Activity {
     private DataInputStream dis;
     private DataOutputStream dos;
     private List<Producto> productos;
-
     private void inicializa() {
         ipServidor = "192.168.60.10";
         puerto = 40001;
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +48,11 @@ public class ActivityComidas extends Activity {
         inicializa();
         comidaTask = new ComidaTask();
         comidaTask.execute();
+
         crearAdapterComidas();
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -54,6 +60,7 @@ public class ActivityComidas extends Activity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
 
     @Override
@@ -65,7 +72,7 @@ public class ActivityComidas extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private List<Producto> obtenerComidas() {
+    private List<Producto> obtenerComidas(){
 
         String[] codComidas = getResources().getStringArray(R.array.codProductoComida);
         String[] nombres = getResources().getStringArray(R.array.comidasDescripcion);
@@ -141,6 +148,5 @@ public class ActivityComidas extends Activity {
             super.onPostExecute(aVoid);
         }
     }
-
 
 }

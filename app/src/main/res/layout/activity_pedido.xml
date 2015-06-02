@@ -8,49 +8,52 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Seleccione la bebida"
+        android:text="@string/seleccioneLaBebida"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="57dp"
-        android:textColor="#0000FF"/>
+        android:textColor="#0000FF"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Seleccione la comida"
+        android:text="@string/seleccioneLaComida"
         android:id="@+id/textView2"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
         android:layout_marginTop="100dp"
-        android:textColor="#0000FF"/>
+        android:textColor="#0000FF"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Seleccione el postre"
+        android:text="@string/seleccioneElPostre"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="100dp"
-        android:textColor="#0000FF"/>
+        android:textColor="#0000FF"
+        android:layout_marginLeft="10dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Volver"
+        android:text="@string/volver"
         android:id="@+id/btVolver"
         android:layout_marginBottom="55dp"
         android:onClick="clicVolver"
         android:textColor="#0000FF"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_marginLeft="75dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ver Pedido"
+        android:text="@string/verPedido"
         android:id="@+id/btVerPedido"
         android:layout_alignTop="@+id/btVolver"
         android:layout_toEndOf="@+id/textView2"
@@ -60,31 +63,37 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bebidas"
+        android:text="@string/bebidas"
         android:id="@+id/btSeleccionarBebida"
         android:onClick="clickSeleccionarBebida"
         android:textColor="#0000FF"
+        android:layout_marginLeft="250dp"
+        android:width="100dp"
         android:layout_alignBottom="@+id/textView"
-        android:layout_toEndOf="@+id/btVerPedido" />
+         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comida"
+        android:text="@string/comidas"
         android:id="@+id/btSeleccionarComida"
         android:onClick="clickSeleccionarComida"
         android:textColor="#0000FF"
+        android:layout_marginLeft="250dp"
+        android:width="100dp"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_toEndOf="@+id/btVerPedido" />
+         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Postre"
+        android:text="@string/postres"
         android:id="@+id/btSeleccionarPostre"
         android:onClick="clickSeleccionarPostre"
         android:textColor="#0000FF"
+        android:layout_marginLeft="250dp"
+        android:width="100dp"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_toEndOf="@+id/btVerPedido" />
+         />
 
 </RelativeLayout>

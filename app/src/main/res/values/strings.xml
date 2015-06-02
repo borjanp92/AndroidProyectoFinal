@@ -11,10 +11,33 @@
     <string name="precio">Precio :</string>
     <string name="SalirAplicacion">Salir</string>
     <string name="confirmacionEliminacionProducto">¿Desea eliminar este producto del pedido?</string>
+    <string name="confirmarPedirCuenta">¿Desea que le traigan la cuenta?</string>
     <string name="TituloMensajeDialog">Pedidos</string>
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
     <string name="totalPedido">El total del pedido es :</string>
     <string name="dineroIntroducido">Se ha pagado con :</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_registro">Registro</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="clave">Clave :</string>
+    <string name="usuario">Usuario :</string>
+    <string name="iniciarSesion">Iniciar sesion</string>
+    <string name="pedido">Pedido</string>
+    <string name="pagar">Pagar</string>
+    <string name="seleccioneLaBebida">Seleccione la bebida :</string>
+    <string name="seleccioneLaComida">Seleccione la comida :</string>
+    <string name="seleccioneElPostre">Seleccione el postre :</string>
+    <string name="comidas">Comidas</string>
+    <string name="bebidas">Bebidas</string>
+    <string name="postres">Postres</string>
+    <string name="volver">Volver</string>
+    <string name="verPedido">Ver Pedido</string>
+    <string name="registroCliente">Registro Cliente</string>
+    <string name="nombre">Nombre :</string>
+    <string name="apellidos">Apellidos :</string>
+    <string name="nif">Nif :</string>
+    <string name="telefono">Telefono :</string>
 
 </resources>

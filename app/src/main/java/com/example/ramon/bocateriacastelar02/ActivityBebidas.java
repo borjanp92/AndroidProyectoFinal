@@ -21,6 +21,9 @@ import java.util.List;
 import dao.SingletonMesa;
 import dto.Producto;
 
+/**
+ * Created by RAMON on 19/01/2015.
+ */
 public class ActivityBebidas extends Activity {
 
     final static String COD_ENVIO="NEWPROD";
@@ -49,6 +52,8 @@ public class ActivityBebidas extends Activity {
         crearAdapterBebidas();
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -56,8 +61,13 @@ public class ActivityBebidas extends Activity {
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
 
         return super.onOptionsItemSelected(item);
     }
@@ -96,11 +106,9 @@ public class ActivityBebidas extends Activity {
                     e.printStackTrace();
                 }
 
-
             }
         });
     }
-
     public class ComidaTask extends AsyncTask<Void, String, Void> {
         @Override
         protected void onProgressUpdate(String... values) {
@@ -127,8 +135,6 @@ public class ActivityBebidas extends Activity {
             } catch (IOException e) {
                 Log.e(LOGCAT, "No se pudo conectar");
             }
-
-
             return null;
         }
 
@@ -137,5 +143,4 @@ public class ActivityBebidas extends Activity {
             super.onPostExecute(aVoid);
         }
     }
-
 }

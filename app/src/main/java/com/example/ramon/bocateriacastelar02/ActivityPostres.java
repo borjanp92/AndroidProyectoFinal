@@ -23,7 +23,11 @@ import dto.Pedido;
 import dao.SingletonMesa;
 import dto.Producto;
 
+/**
+ * Created by RAMON on 19/01/2015.
+ */
 public class ActivityPostres extends Activity {
+
     final static String COD_ENVIO="NEWPROD";
     final static String LOGCAT = "ALTA";
     private List<Producto> productos;
@@ -46,7 +50,6 @@ public class ActivityPostres extends Activity {
         inicializa();
         postreTask = new ComidaTask();
         postreTask.execute();
-
 
         crearAdapterPostres();
     }
@@ -146,4 +149,5 @@ public class ActivityPostres extends Activity {
             super.onPostExecute(aVoid);
         }
     }
+
 }
