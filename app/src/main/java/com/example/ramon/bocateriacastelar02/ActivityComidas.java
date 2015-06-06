@@ -15,6 +15,8 @@ import android.widget.Toast;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 import java.util.ArrayList;
@@ -34,8 +36,8 @@ public class ActivityComidas extends Activity {
     private int puerto;
     private Socket socket;
     private ComidaTask comidaTask;
-    private DataInputStream dis;
-    private DataOutputStream dos;
+    private ObjectInputStream ois;
+    private ObjectOutputStream oos;
     private List<Producto> productos;
     private void inicializa() {
         ipServidor = "192.168.60.10";
@@ -102,7 +104,7 @@ public class ActivityComidas extends Activity {
 
                 String sendText=COD_ENVIO+":"+SingletonMesa.getInstance().getMesa()+":"+productoElegido.toString();
                 try {
-                    dos.writeUTF(sendText);
+                    oos.writeObject(sendText);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -125,15 +127,20 @@ public class ActivityComidas extends Activity {
             try {
                 socket = new Socket(ipServidor, puerto);
                 publishProgress("Conectado con el servidor");
-                dis = new DataInputStream(socket.getInputStream());
-                dos = new DataOutputStream(socket.getOutputStream());
+                ois = new ObjectInputStream(socket.getInputStream());
+                oos = new ObjectOutputStream(socket.getOutputStream());
                 while (puerto != 1) {
-                    String msg = dis.readUTF();
+                    String msg = null;
+                    try {
+                        msg =(String) ois.readObject();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     publishProgress(msg);
                 }
-                dis.close();
-                dos.flush();
-                dos.close();
+                ois.close();
+                oos.flush();
+                oos.close();
                 socket.close();
             } catch (IOException e) {
                 Log.e(LOGCAT, "No se pudo conectar");

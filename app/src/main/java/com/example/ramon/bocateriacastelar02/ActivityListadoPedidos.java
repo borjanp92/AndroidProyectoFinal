@@ -23,6 +23,8 @@ import android.widget.Toast;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -51,9 +53,9 @@ public class ActivityListadoPedidos extends Activity {
     private String ipServidor;
     private int puerto;
     private Socket socket;
-    private ComidaTask listadoPedidosTask;
-    private DataInputStream dis;
-    private DataOutputStream dos;
+    private ListadoPedidoTask listadoPedidosTask;
+    private ObjectInputStream ois;
+    private ObjectOutputStream oos;
     private List<LineaPedido> lineasPedidos;
     private LineaPedido lineaPedido;
 
@@ -63,7 +65,7 @@ public class ActivityListadoPedidos extends Activity {
     }
     private void enviarDato(){
         try {
-            dos.writeUTF(COD_ENVIO+":"+SingletonMesa.getInstance().getMesa()+":x");
+            oos.writeObject(COD_ENVIO + ":" + SingletonMesa.getInstance().getMesa() + ":x");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -84,7 +86,7 @@ public class ActivityListadoPedidos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_pedido);
         inicializa();
-        listadoPedidosTask = new ComidaTask();
+        listadoPedidosTask = new ListadoPedidoTask();
         listadoPedidosTask.execute();
         conexion = new Conexion(this, "conexion", null, 1);
         total = 0.0;
@@ -136,7 +138,7 @@ public class ActivityListadoPedidos extends Activity {
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
                 try {
-                    dos.writeUTF(COD_ENVIO+":"+SingletonMesa.getInstance().getMesa()+":IDCLIENTE"+":"+pedidoElegido.getNombreProducto());
+                    oos.writeObject(COD_ENVIO + ":" + SingletonMesa.getInstance().getMesa() + ":IDCLIENTE" + ":" + pedidoElegido.getNombreProducto());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -171,7 +173,7 @@ public class ActivityListadoPedidos extends Activity {
                 conexion.delete(SingletonMesa.getInstance().getMesa());
                 tvTotal.setText("Total del Pedido : " + calcularTotalPedido() + " €");
                 try {
-                    dos.writeUTF(COD_ENVIO_PAG + ":" + SingletonMesa.getInstance().getMesa() + ":IDCLIENTE" + ":"+total);
+                    oos.writeObject(COD_ENVIO_PAG + ":" + SingletonMesa.getInstance().getMesa() + ":IDCLIENTE" + ":" + total);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -216,7 +218,7 @@ public class ActivityListadoPedidos extends Activity {
 
     }
 
-    public class ComidaTask extends AsyncTask<Void, String, Void> {
+    public class ListadoPedidoTask extends AsyncTask<Void, String, Void> {
         @Override
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
@@ -229,25 +231,34 @@ public class ActivityListadoPedidos extends Activity {
             try {
                 socket = new Socket(ipServidor, puerto);
                 publishProgress("Conectado con el servidor");
-                dis = new DataInputStream(socket.getInputStream());
-                dos = new DataOutputStream(socket.getOutputStream());
+                ois = new ObjectInputStream(socket.getInputStream());
+                oos = new ObjectOutputStream(socket.getOutputStream());
                 enviarDato();
                 while (puerto != 1) {
-                    String msg = dis.readUTF();
+                    String msg = null;
+                    try {
+                        msg = (String) ois.readObject();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     //publishProgress(msg);
                     String cadenaDatos[] = msg.split(":");
                     while (cadenaDatos[0].equalsIgnoreCase("3")) {
                         lineaPedido=new LineaPedido();
                         lineasPedidos.add(lineaPedido);
-                        msg = dis.readUTF();
+                        try {
+                            msg = (String) ois.readObject();
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
                         cadenaDatos= msg.split(":");
                     }
 
                 }
                 recargarLista();
-                dis.close();
-                dos.flush();
-                dos.close();
+                ois.close();
+                oos.flush();
+                oos.close();
                 socket.close();
             } catch (IOException e) {
                 Log.e(LOGCAT, "No se pudo conectar");

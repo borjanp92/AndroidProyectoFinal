@@ -14,6 +14,8 @@ import android.widget.Toast;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +23,6 @@ import java.util.List;
 import dao.SingletonMesa;
 import dto.Producto;
 
-/**
- * Created by RAMON on 19/01/2015.
- */
 public class ActivityBebidas extends Activity {
 
     final static String COD_ENVIO="NEWPROD";
@@ -32,9 +31,9 @@ public class ActivityBebidas extends Activity {
     private String ipServidor;
     private int puerto;
     private Socket socket;
-    private ComidaTask bebidaTask;
-    private DataInputStream dis;
-    private DataOutputStream dos;
+    private BebidaTask bebidaTask;
+    private ObjectInputStream ois;
+    private ObjectOutputStream oos;
 
     private void inicializa() {
         ipServidor = "192.168.60.10";
@@ -46,7 +45,7 @@ public class ActivityBebidas extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.productos);
         inicializa();
-        bebidaTask = new ComidaTask();
+        bebidaTask = new BebidaTask();
         bebidaTask.execute();
 
         crearAdapterBebidas();
@@ -101,7 +100,7 @@ public class ActivityBebidas extends Activity {
 
                 String sendText= COD_ENVIO+":"+SingletonMesa.getInstance().getMesa()+":"+productoElegido.toString();
                 try {
-                    dos.writeUTF(sendText);
+                    oos.writeObject(sendText);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -109,7 +108,7 @@ public class ActivityBebidas extends Activity {
             }
         });
     }
-    public class ComidaTask extends AsyncTask<Void, String, Void> {
+    public class BebidaTask extends AsyncTask<Void, String, Void> {
         @Override
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
@@ -122,15 +121,20 @@ public class ActivityBebidas extends Activity {
             try {
                 socket = new Socket(ipServidor, puerto);
                 publishProgress("Conectado con el servidor");
-                dis = new DataInputStream(socket.getInputStream());
-                dos = new DataOutputStream(socket.getOutputStream());
+                ois = new ObjectInputStream(socket.getInputStream());
+                oos = new ObjectOutputStream(socket.getOutputStream());
                 while (puerto != 1) {
-                    String msg = dis.readUTF();
+                    String msg = null;
+                    try {
+                        msg = (String) ois.readObject();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     publishProgress(msg);
                 }
-                dis.close();
-                dos.flush();
-                dos.close();
+                ois.close();
+                oos.flush();
+                oos.close();
                 socket.close();
             } catch (IOException e) {
                 Log.e(LOGCAT, "No se pudo conectar");

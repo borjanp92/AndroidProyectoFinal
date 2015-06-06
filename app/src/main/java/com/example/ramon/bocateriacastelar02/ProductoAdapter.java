@@ -13,9 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 import dto.Producto;
 
-/**
- * Created by RAMON on 12/01/2015.
- */
+
 public class ProductoAdapter extends BaseAdapter {
 
     private Activity activity;

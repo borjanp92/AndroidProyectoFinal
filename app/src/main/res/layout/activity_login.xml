@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#A9F5F2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/iniciarSesion"
+        android:id="@+id/textViewInicioSesion"
+        android:layout_marginTop="62dp"
+        android:textColor="#0000FF"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/usuario"
+        android:textColor="#0000FF"
+        android:id="@+id/textViewUsuario"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/textViewInicioSesion"
+        android:layout_toLeftOf="@+id/textViewInicioSesion"
+        android:layout_toStartOf="@+id/textViewInicioSesion" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etIdUsuarioLogin"
+        android:layout_alignBottom="@+id/textViewUsuario"
+        android:layout_toRightOf="@+id/textViewUsuario"
+        android:layout_toEndOf="@+id/textViewUsuario" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/clave"
+        android:textColor="#0000FF"
+        android:id="@+id/textViewClave"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textViewUsuario"
+        android:layout_alignStart="@+id/textViewUsuario" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/etPasswordLogin"
+        android:layout_alignBottom="@+id/textViewClave"
+        android:layout_toRightOf="@+id/textViewUsuario"
+        android:layout_toEndOf="@+id/textViewUsuario" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar"
+        android:textColor="#0000FF"
+        android:id="@+id/btIniciarSesion"
+        android:layout_marginTop="79dp"
+        android:layout_below="@+id/textViewClave"
+        android:layout_alignLeft="@+id/textViewClave"
+        android:layout_alignStart="@+id/textViewClave"
+        android:onClick="clickIniciar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrarse"
+        android:id="@+id/btRegistrarse"
+        android:onClick="clickRegistrarse"
+        android:textColor="#0000FF"
+        android:layout_alignTop="@+id/btIniciarSesion"
+        android:layout_toRightOf="@+id/btIniciarSesion"
+        android:layout_toEndOf="@+id/btIniciarSesion"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp" />
+</RelativeLayout>

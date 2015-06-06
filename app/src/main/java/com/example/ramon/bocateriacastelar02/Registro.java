@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import dao.SingletonCodUsuario;
 import dto.Cliente;
 import dao.Conexion;
 
@@ -64,10 +65,11 @@ public class Registro extends ActionBarActivity {
             cliente.setApellidos(etApellidos.getText().toString());
             cliente.setNif(etNif.getText().toString());
             cliente.setTelefono(etTelefono.getText().toString());
-            cliente.setIdUsuario(etIdUsuario.getText().toString());
+            cliente.setCodUsuario(etIdUsuario.getText().toString());
             cliente.setClave(etClave.getText().toString());
             cliente.setActivo(1);
             conexion.addCliente(cliente);
+            SingletonCodUsuario.getInstance().setCodUsuario(cliente.getCodUsuario());
             startActivity(new Intent(this,MainActivity.class));
             finish();
         }

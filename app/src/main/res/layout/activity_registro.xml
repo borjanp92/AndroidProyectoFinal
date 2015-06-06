@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#A9F5F2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/registroCliente"
+        android:id="@+id/textViewInicioSesion"
+        android:layout_marginTop="30dp"
+        android:textColor="#0000FF"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/nombre"
+        android:textColor="#0000FF"
+        android:id="@+id/tvNombre"
+        android:layout_below="@+id/textViewInicioSesion"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextNombre"
+        android:layout_alignBottom="@+id/tvNombre"
+        android:layout_alignLeft="@+id/textViewInicioSesion"
+        android:layout_alignStart="@+id/textViewInicioSesion" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/apellidos"
+        android:textColor="#0000FF"
+        android:id="@+id/textView"
+        android:layout_below="@+id/tvNombre"
+        android:layout_alignLeft="@+id/tvNombre"
+        android:layout_alignStart="@+id/tvNombre"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextApellidos"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignLeft="@+id/editTextNombre"
+        android:layout_alignStart="@+id/editTextNombre" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/nif"
+        android:textColor="#0000FF"
+        android:id="@+id/textView3"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextNif"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/editTextApellidos"
+        android:layout_alignStart="@+id/editTextApellidos" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/telefono"
+        android:textColor="#0000FF"
+        android:id="@+id/textView5"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editTextTelefono"
+        android:layout_alignLeft="@+id/editTextNif"
+        android:layout_alignStart="@+id/editTextNif"
+        android:layout_below="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/usuario"
+        android:textColor="#0000FF"
+        android:id="@+id/textView7"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextIdUsuario"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignLeft="@+id/editTextTelefono"
+        android:layout_alignStart="@+id/editTextTelefono" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/clave"
+        android:textColor="#0000FF"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/textView7"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editTextClave"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignLeft="@+id/editTextIdUsuario"
+        android:layout_alignStart="@+id/editTextIdUsuario" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrarse"
+        android:textColor="#0000FF"
+        android:id="@+id/btRegistrar"
+        android:onClick="clickRegistrar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/editTextClave"
+        android:layout_alignStart="@+id/editTextClave"
+        android:layout_marginBottom="40dp"/>
+
+</RelativeLayout>

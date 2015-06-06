@@ -1,8 +1,5 @@
 package dao;
 
-/**
- * Created by RAMON on 25/01/2015.
- */
 public class SingletonMesa {
 
     private static SingletonMesa INSTANCE = null;

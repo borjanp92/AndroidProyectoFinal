@@ -9,19 +9,19 @@ public class Cliente {
     private String nombre;
     private String apellidos;
     private String telefono;
-    private String idUsuario;
+    private String codUsuario;
     private String clave;
     private Integer activo;
 
     public Cliente (){
 
     }
-    public Cliente(String nif, String nombre, String apellidos, String telefono, String idUsuario, String clave, Integer activo) {
+    public Cliente(String nif, String nombre, String apellidos, String telefono, String codUsuario, String clave, Integer activo) {
         this.nif = nif;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
-        this.idUsuario = idUsuario;
+        this.codUsuario = codUsuario;
         this.clave = clave;
         this.activo = activo;
     }
@@ -58,12 +58,12 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
+    public String getCodUsuario() {
+        return codUsuario;
     }
 
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setCodUsuario(String codUsuario) {
+        this.codUsuario = codUsuario;
     }
 
     public String getClave() {
